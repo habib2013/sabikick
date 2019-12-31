@@ -132,6 +132,7 @@ img{ max-width:100%;}
 .msg_history {
   height: auto;
   overflow-y: auto;
+  
 }
 .panel .slidedown .glyphicon, .chat .glyphicon
 {
