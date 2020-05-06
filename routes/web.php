@@ -130,7 +130,7 @@ Route::get('/userstats','AdminsController@statistics')->middleware('verified','i
 //Route::get('/users/{user_id?}','AdminsController@showModal');
 Route::post('/autocomplete/fetch', 'AutocompleteController@fetch')->name('autocomplete.fetch');
 Route::post('follow/{user}','FollowsController@store');
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/faqs','FaqsController@faqs');
 Route::get('/coaches','FaqsController@coaches');
 Route::get('/posts/create', 'PostsController@create')->name('posts.create')->middleware('verified');

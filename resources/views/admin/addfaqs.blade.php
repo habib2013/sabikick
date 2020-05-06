@@ -494,7 +494,7 @@
         <script src="{{asset('js/purpose.js')}}"></script>
 
         <script src="{{asset('js/demo.js')}}"></script>
-        <script src="{{asset('js/crudfaqs.js')}}"></script>
+			<script src="{{asset('js/crudfaqs.js')}}"></script>
 
 
 

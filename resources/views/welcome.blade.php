@@ -106,9 +106,8 @@
                     <a class="navbar-brand mr-lg-5" href="/">
                      <img alt="Image placeholder" src="{{asset('img/newlogo.png')}}" id="navbar-logo" style="height: 50px;">
                 
-                  <!-- <p style="padding-top:15px;font-family: 'Shadows Into Light', cursive;font-size:30px">Sabikick</p> -->
-                      <!-- <h6 id="navbar-logo" style="height: 50px;padding-top:7px;color:#ffffff;font-size:30px">Sabikick</h6> -->
-                    </a>
+            
+                   </a>
                     <!-- Navbar collapse trigger -->
                     <button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -590,7 +589,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1">
                     <div class="row pt-md">
                         <div class="col-lg-4 mb-5 mb-lg-0">
                             <a href="#">
-                            <img alt="Image placeholder" src="{{asset('img/newlogo.png')}}" id="navbar-logo" style="height: 50px;">
+                            <img alt="Image placeholder" src="{{asset('newlogo.png')}}" id="navbar-logo" style="height: 50px;">
                     </a>
                             <p>Restoring the glory of African players. <br> we find hope in players <br> We showcase players based on excellence and integrity</p>
                         </div>
