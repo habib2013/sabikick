@@ -29,22 +29,22 @@
                 <div class="container px-0">
                     <div class="navbar-nav align-items-center">
                         <div class="d-none d-lg-inline-block">
-                    
+
                         </div>
-                   
+
                         <div class="ml-auto">
                             <ul class="nav">
                                 <li class="nav-item">
-                                    
+
                                 </li>
-        
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link pr-0" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="far fa-user-circle"></i>
                                     </a>
 
                                     @guest
-                             
+
                                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                                         <h6 class="dropdown-header">User menu</h6>
                                         <a class="dropdown-item" href="/login">
@@ -57,10 +57,10 @@
                                         @endif
                                     </div>
                                 @else
-                                   
+
                                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                                         <h6 class="dropdown-header">{{ Auth::user()->username}}</h6>
-                                     
+
                                         <a class="dropdown-item" href="/settings/{{Auth::user()->username}}">
                                             <i class="far fa-cog"></i>Settings
                                         </a>
@@ -71,8 +71,8 @@
                                         <div class="dropdown-divider" role="presentation"></div>
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                   
-                                      
+
+
                                             <i class="far fa-sign-out-alt"></i>Sign out
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -92,9 +92,9 @@
                 <div class="container px-lg-0">
                     <!-- Logo -->
                     <a class="navbar-brand mr-lg-5" href="#">
-                    
+
                     <img alt="Image placeholder" src="{{asset('img/newlogo.png')}}" id="navbar-logo" style="height: 50px;">
-                 
+
                    <!-- <p style="padding-top:15px;font-family: 'Shadows Into Light', cursive;font-size:30px">Sabikick</p> -->
                        <!-- <h6 id="navbar-logo" style="height: 50px;padding-top:7px;color:#ffffff;font-size:30px">Sabikick</h6> -->
                      </a>
@@ -106,7 +106,7 @@
                     <div class="collapse navbar-collapse" id="navbar-main-collapse">
                     <ul class="navbar-nav align-items-lg-center">
                             <!-- Home - Overview  -->
-                           
+
                             <!-- Pages menu -->
                             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
                                 <a class="nav-link" href="/listplayers" >Players</a>
@@ -127,8 +127,8 @@
                                 <a class="nav-link" href="/listclubs" >Clubs</a>
                             </li>
                             <!-- Sections menu -->
-                          
-                           
+
+
                         </ul>
                         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                             <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
@@ -139,7 +139,7 @@
                                             <a href="/contactus" class="list-group-item list-group-item-action" role="button">
                                                 <div class="media d-flex align-items-center">
                                                     <!-- SVG icon -->
-                                                    
+
                                                     <!-- Media body -->
                                                     <div class="media-body">
                                                   <p class="mb-0">Contact us</p>
@@ -151,46 +151,46 @@
                                             <a href="/aboutus" class="list-group-item list-group-item-action" role="button">
                                                 <div class="media d-flex align-items-center">
                                                     <!-- SVG icon -->
-                                        
+
                                                     <!-- Media body -->
-                                             
+
                                                         <p class="mb-0">About Us</p>
-                                      
+
                                                 </div>
                                             </a>
 
                                             <a href="/faqs" class="list-group-item list-group-item-action" role="button">
                                                 <div class="media d-flex align-items-center">
                                                     <!-- SVG icon -->
-                                        
+
                                                     <!-- Media body -->
-                                            
+
                                                         <p class="mb-0">Faqs</p>
-                                              
+
                                                 </div>
                                             </a>
                                             <a href="/showallposts" class="list-group-item list-group-item-action" role="button">
                                                 <div class="media d-flex align-items-center">
                                                     <!-- SVG icon -->
-                                        
+
                                                     <!-- Media body -->
-                                            
+
                                                         <p class="mb-0">News & Events</p>
-                                              
+
                                                 </div>
                                             </a>
                                         </li>
                                     </ul>
-                                 
+
                                 </div>
                             </li>
-                          
-                         
+
+
                         </ul>
                     </div>
                 </div>
-            </nav>  
-  
+            </nav>
+
     </header>
   <!-- Omnisearch -->
 
@@ -203,17 +203,17 @@
 
           <div class=" col-lg-8">
 
-          
+
             <!-- Salute + Small stats -->
             <div class="row align-items-center mb-4">
               <div class="col-lg-8 col-xl-5 mb-4 mb-md-0">
-           
-                <span class="h2 mb-0 text-white d-block">{{$user->username}}&nbsp; 
+
+                <span class="h2 mb-0 text-white d-block">{{$user->username}}&nbsp;
                 @if(($user->status) == "verify")
             <img src="{{asset('img/appro.png')}}" style="height:25px;width:25px"/>
             @else
             <img src="{{asset('img/waiting.png')}}" style="height:25px;width:25px" title="Not a verified account"/>
-           
+
                 @endif
                 </span>
               </div>
@@ -225,7 +225,7 @@
                     </span>
                     <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
                      {{count($user->profile->followers)}}
-                    
+
                     </a>
                   </li>
                   <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
@@ -234,7 +234,7 @@
                     </span>
                     <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
                     {{count($user->following)}}
-                     
+
                     </a>
                   </li>
                   <li class="list-inline-item col-sm-4 col-md-auto px-3 my-2 mx-0">
@@ -242,10 +242,10 @@
                       <i class="bg-danger"></i>Article(s)
                     </span>
                     <a class="d-sm-block h5 text-white font-weight-bold pl-2" href="#">
-                  
+
                      {{count($user->posts) ?? 'N/A'}}
                      </a>
-                
+
                     </a>
                   </li>
                 </ul>
@@ -258,27 +258,27 @@
                 <span class="btn-inner--text d-none d-md-inline-block">My Profile</span>
               </a>
               <div class="btn-group btn-group-nav shadow ml-auto" role="group" aria-label="Basic example">
-              
+
               <div class="btn-group" role="group">
-              
+
                   <button id="btn-group-boards" type="button" class="btn btn-neutral btn-icon" data-toggle="dropdown" data-offset="0,8" aria-haspopup="true" aria-expanded="false">
                     <span class="btn-inner--icon"><i class="far fa-chart-line"></i></span>
                     <span class="btn-inner--text d-none d-sm-inline-block">My Connections</span>
                   </button>
                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" aria-labelledby="btn-group-boards">
-                    <a class="dropdown-item" href="/getfollower"> {{count($user->profile->followers)}} followers</a>
-                    <a class="dropdown-item" href="/getfollowing"> {{count($user->following)}} Following</a>
-                  
+                  <a class="dropdown-item" href="/getfollower/{{$user->username}}"> {{count($user->profile->followers)}} followers</a>
+                    <a class="dropdown-item" href="/getfollowing/{{$user->username}}"> {{count($user->following)}} Following</a>
+
                   </div>
 
                 </div>
 
 
               </div>
-              
+
             </div>
 
-            
+
           </div>
         </div>
       </div>
@@ -298,11 +298,11 @@
                 <div class="card-body p-3 pt-0 text-center">
                   <h5 class="mb-0">{{$user->name}}</h5>
                   <span class="d-block text-muted mb-3">{{$user->usertype}}</span>
-              
+
                   <div class="actions d-flex justify-content-between mt-3 pt-3 px-5 delimiter-top">
-                 
-                  
-                 
+
+
+
                   </div>
                 </div>
 <br>
@@ -319,8 +319,8 @@
 <p class="btn btn-danger">Account has been <b>disabled</b> by the administrator, please be careful</p>
 @endif
 
-           
-                 
+
+
                 </div>
               </div>
             </div>
@@ -369,7 +369,7 @@
  @else
             <div class="card">
               <div class="card-header pt-4 pb-2">
-              
+
  <!-- Button trigger modal -->
 
                 <div class="d-flex align-items-center">
@@ -377,14 +377,14 @@
                   <a href="#" class="avatar rounded-circle shadow">
                     <img alt="Image placeholder"  src="{{$user->profile->profileimage()}}" style="height:47px">
                   </a>
-                  
+
                   <div class="avatar-content">
                     <h6 class="mb-0">{{$user->username}} </h6>
                     <small class="d-block text-muted"><i class="far fa-clock mr-2"></i>3 hrs ago</small>
                   </div>
                 </div>
               </div>
-      
+
               <div class="card-body">
               <p>{{$user->profile->bio ?? 'No bio Available'}}</p>
                <!-- Badges -->
@@ -411,7 +411,7 @@
                   </a>
                   <a href="#" class="d-flex align-items-center mr-lg-5 mb-3 mb-lg-0">
                     <div>
-                   
+
                     </div>
                     <div class="pl-3">
                 @if(Auth::user()->id == $user->id)
@@ -423,15 +423,15 @@
 @endif
                     </div>
 
-                    
+
                   </a>
 
                 </div>
                 @if(Auth::user()->id == $user->id)
 
 @else
-      
-                <a href="{{URL::to('/message/'.$user->id)}}"> 
+
+                <a href="{{URL::to('/message/'.$user->id)}}">
                 <div class="pt-5 mt-5 delimiter-top">
                <button class="btn btn-success"><span class="far-fa-comment"></span> Start a chat with {{$user->username}}</button>
                 </div>
@@ -451,10 +451,10 @@
                         <small class="text-muted font-weight-bold">{{$user->profile->datefrom}} - {{$user->profile->dateto}}</small>
                         <h6>{{$user->profile->position}}</h6>
                         <p class="text-sm lh-160">{{$user->profile->bio ?? 'No bio'}}</p>
-                      
+
                       </div>
                     </div>
-                   
+
                   </div>
                 </div>
                 <div class="pt-5 mt-5 delimiter-top">
@@ -465,28 +465,28 @@
                   @if(($user->profile->cv) == '')
 
 @else
-<button class="btn btn-primary"> 
-         
+<button class="btn btn-primary">
+
          <a  href="/cvdownload/{{$user->profile->cv}}" style="color:#ffffff">Download CV</a> </button>
-       
+
 
 @endif
 
-            
+
                   <!-- Skil badges -->
                   <div>
                   <div class="row">
-                  
+
 
                   <div class="pt-5 mt-5 delimiter-top">
-          
+
                 <div class="row">
                   <div class="col" style="color:#000000">
-                   <h4>Personal Details</h4> 
+                   <h4>Personal Details</h4>
                    <p><b>Phone number: </b>{{$user->profile->phone ?? 'N/A'}}</p>
                    <p><b>Date of Birth: </b>{{date('M j, Y',strtotime($user->profile->birthday)) ?? 'N/A'}}</p>
 
-                  
+
                    <p><b>Gender:</b> {{$user->profile->gender ?? 'N/A'}}</p>
                    <p><b>House address:</b> {{$user->profile->address ?? 'N/A'}}</p>
                    <p><b>City: </b>{{$user->profile->city ?? 'N/A'}}</p>
@@ -498,21 +498,21 @@
                 </div>
                   </div>
                 </div>
-              
+
               </div>
 
             </div>
 
 
             <!-- Post -->
-          
+
 
           </div>
         </div>
       </div>
     </section>
 
-   
+
             <section class="slice slice-lg bg-section-secondary">
                 <div class="container">
                     <div class="mb-5 text-center">
@@ -539,14 +539,14 @@ No video post here
 @else
         @foreach($user->videourl as $pos)
 
-   
+
                                         <div class="swiper-slide p-4">
                                         <div class="card hover-shadow-lg hover-translate-y-n10">
-            
-            
+
+
               <a href="#">
-              
-                <iframe 
+
+                <iframe
 src="https://www.youtube.com/embed/{{$pos->url}}"  class="card-img-top">
 </iframe>
               </a>
@@ -554,7 +554,7 @@ src="https://www.youtube.com/embed/{{$pos->url}}"  class="card-img-top">
                 <a href="#" class="d-block h5 lh-150">{{$pos->title}}</a>
                 <a href="#" class="d-block h5 lh-150">{{$pos->created_at}}</a>
              </div>
-             
+
             </div>
                                         </div>
 @endforeach
@@ -577,11 +577,11 @@ src="https://www.youtube.com/embed/{{$pos->url}}"  class="card-img-top">
 
                                     </div>
 
-                                    
+
                                 </div>
 
 
-                                
+
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center"></div>
                             </div>
@@ -619,18 +619,18 @@ No video post here
 @else
         @foreach($user->posts as $pos)
 
-   
+
                                         <div class="swiper-slide p-4">
                                         <div class="card hover-shadow-lg hover-translate-y-n10">
-        
+
               <a href="#">
                 <img alt="Image placeholder" src="/storage/{{$pos->image}}" class="card-img-top">
               </a>
-            
+
               <div class="card-body py-5 text-center">
                 <a href="#" class="d-block h5 lh-150">{{$pos->title}}</a>
              </div>
-             
+
             </div>
                                         </div>
 @endforeach
@@ -653,11 +653,11 @@ No video post here
 
                                     </div>
 
-                                    
+
                                 </div>
 
 
-                                
+
                                 <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center"></div>
                             </div>
                         </div>
@@ -670,7 +670,7 @@ No video post here
 @if(($user->is_admin)== 1)
 <div class="card">
               <div class="card-header pt-4 pb-2">
-              
+
  <!-- Button trigger modal -->
 
                 <div class="d-flex align-items-center">
@@ -678,14 +678,14 @@ No video post here
                   <a href="#" class="avatar rounded-circle shadow">
                     <img alt="Image placeholder"  src="{{$user->profile->profileimage()}}" style="height:47px">
                   </a>
-                  
+
                   <div class="avatar-content">
                     <h6 class="mb-0">{{$user->username}} </h6>
                     <small class="d-block text-muted"><i class="far fa-clock mr-2"></i>3 hrs ago</small>
                   </div>
                 </div>
               </div>
-      
+
               <div class="card-body">
               <p>{{$user->profile->bio ?? 'No bio Available'}}</p>
                <!-- Badges -->
@@ -712,7 +712,7 @@ No video post here
                   </a>
                   <a href="#" class="d-flex align-items-center mr-lg-5 mb-3 mb-lg-0">
                     <div>
-                   
+
                     </div>
                     <div class="pl-3">
                 @if(Auth::user()->id == $user->id)
@@ -724,7 +724,7 @@ No video post here
 @endif
                     </div>
 
-                    
+
                   </a>
                 </div>
                 <div class="pt-5 mt-5 delimiter-top">
@@ -740,10 +740,10 @@ No video post here
                         <small class="text-muted font-weight-bold">{{$user->profile->datefrom}} - {{$user->profile->dateto}}</small>
                         <h6>{{$user->profile->position}}</h6>
                         <p class="text-sm lh-160">{{$user->profile->bio ?? 'No bio'}}</p>
-                      
+
                       </div>
                     </div>
-                   
+
                   </div>
                 </div>
                 <div class="pt-5 mt-5 delimiter-top">
@@ -754,24 +754,24 @@ No video post here
                   @if(($user->profile->cv) == '')
 
 @else
-<button class="btn btn-primary"> 
-         
+<button class="btn btn-primary">
+
          <a  href="/cvdownload/{{$user->profile->cv}}" style="color:#ffffff">Download CV</a> </button>
-       
+
 
 @endif
 
-            
+
                   <!-- Skil badges -->
                   <div>
                   <div class="row">
-                  
+
 
                   <div class="pt-5 mt-5 delimiter-top">
-          
+
                 <div class="row">
                   <div class="col" style="color:#000000">
-                   <h4>Personal Details</h4> 
+                   <h4>Personal Details</h4>
                    <p><b>Phone number: </b>{{$user->profile->phone ?? 'N/A'}}</p>
                    <p><b>Date of Birth: </b>{{$user->profile->birthday ?? 'N/A'}}</p>
                    <p><b>Gender:</b> {{$user->profile->gender ?? 'N/A'}}</p>
@@ -785,21 +785,21 @@ No video post here
                 </div>
                   </div>
                 </div>
-              
+
               </div>
 
             </div>
 
 
             <!-- Post -->
-          
+
 
           </div>
         </div>
       </div>
     </section>
 
-   
+
             <section class="slice slice-lg bg-section-secondary">
                 <div class="container">
                     <div class="mb-5 text-center">
@@ -826,14 +826,14 @@ No video post here
 @else
         @foreach($user->videourl as $pos)
 
-   
+
                                         <div class="swiper-slide p-4">
                                         <div class="card hover-shadow-lg hover-translate-y-n10">
-            
-            
+
+
               <a href="#">
-              
-                <iframe 
+
+                <iframe
 src="https://www.youtube.com/embed/{{$pos->url}}"  class="card-img-top">
 </iframe>
               </a>
@@ -841,7 +841,7 @@ src="https://www.youtube.com/embed/{{$pos->url}}"  class="card-img-top">
                 <a href="#" class="d-block h5 lh-150">{{$pos->title}}</a>
                 <a href="#" class="d-block h5 lh-150">{{$pos->created_at}}</a>
              </div>
-             
+
             </div>
                                         </div>
 @endforeach
@@ -864,11 +864,11 @@ src="https://www.youtube.com/embed/{{$pos->url}}"  class="card-img-top">
 
                                     </div>
 
-                                    
+
                                 </div>
 
 
-                                
+
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center"></div>
                             </div>
@@ -906,18 +906,18 @@ No video post here
 @else
         @foreach($user->posts as $pos)
 
-   
+
                                         <div class="swiper-slide p-4">
                                         <div class="card hover-shadow-lg hover-translate-y-n10">
-        
+
               <a href="#">
                 <img alt="Image placeholder" src="/storage/{{$pos->image}}" class="card-img-top">
               </a>
-            
+
               <div class="card-body py-5 text-center">
                 <a href="#" class="d-block h5 lh-150">{{$pos->title}}</a>
              </div>
-             
+
             </div>
                                         </div>
 @endforeach
@@ -940,11 +940,11 @@ No video post here
 
                                     </div>
 
-                                    
+
                                 </div>
 
 
-                                
+
                                 <!-- Add Pagination -->
                                 <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center"></div>
                             </div>
@@ -1005,13 +1005,13 @@ No video post here
       </div>
     </div>
   </footer>
-  
-  <script> 
-      
-//  setInterval(soundCheck,1000); 
+
+  <script>
+
+//  setInterval(soundCheck,1000);
 //  var first_run=0;
 // function soundCheck() {
-  
+
 
 //    var oldMessage=$('#sound_check').val();
 //     $.ajax({
@@ -1020,8 +1020,8 @@ No video post here
 //         datatype:'html',
 //         success:function(response){
 //             $('#sound_check').val(response);
-       
-           
+
+
 //             if (response != oldMessage) {
 //                 response=oldMessage;
 //                             if(first_run===0) {
@@ -1030,29 +1030,29 @@ No video post here
 //                              var audio = document.getElementById("audio");
 //                              audio.play();
 //                             }
-                   
+
 //                }
-           
-           
-            
+
+
+
 //            }
 //         });
 // }
-  
+
   </script>
-<script> 
- setInterval(seenMessage,1000); 
- setInterval(allMessageView,1000); 
+<script>
+ setInterval(seenMessage,1000);
+ setInterval(allMessageView,1000);
 
 function seenMessage() {
-   
+
 
     $.ajax({
         type:'get',
         url:'{{URL::to('/seen')}}',
         datatype:'html',
         success:function(response){
-            
+
             if(response > 0){
                 $('#smsnum').show();
                 $('#smsnum').html(response);
@@ -1060,12 +1060,12 @@ function seenMessage() {
             }else{
                 $('#smsnum').hide();
             }
-             
+
            }
         });
 }
 function allMessageView() {
-   
+
 
     $.ajax({
         type:'get',
@@ -1097,7 +1097,7 @@ function singleSeenUpdate(id) {
 
 
 
-</script>  
+</script>
 
 <script src="{{asset('js/chat.js')}}"></script>
   <script src="{{ asset('js/app.js') }}"></script>
@@ -1109,10 +1109,10 @@ function singleSeenUpdate(id) {
         <script src="{{asset('js/purpose.js')}}"></script>
         <!-- Demo JS - remove it when starting your project -->
         <script src="{{asset('js/demo.js')}}"></script>
-     
-     
+
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
-     
+
 </body>
 
 

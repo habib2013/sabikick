@@ -45,8 +45,9 @@ Route::get('/listcoaches', 'ListsOutController@coaches');
 Route::get('/listagents', 'ListsOutController@agents');
 Route::get('/listscouts', 'ListsOutController@scouts');
 Route::get('/listclubs', 'ListsOutController@clubs');
-Route::get('/getfollowing', 'ListsOutController@getfollowing');
-Route::get('/getfollower', 'ListsOutController@getfollower');
+// Route::get('/getfollowing', 'ListsOutController@getfollowing');
+//Route::get('/getfollower', 'ListsOutController@getfollower');
+
 
 Auth::routes(['verify' => true]);
 
@@ -59,7 +60,7 @@ Route::get('/testmodal', function () {
 //--CREATE a link--//
 Route::post('/users', function (Request $request) {
     $user = User::create($request->all());
-  
+
     return Response::json($user);
 });
 //  Create a faq
@@ -87,28 +88,28 @@ Route::get('/profiles/{user_id?}', function ($user_id) {
 //     $link = Link::find($link_id);
 //     return Response::json($link);
 // });
- 
+
 //--UPDATE a link--//
 Route::put('/users/{user_id?}', function (Request $request,User $user_id) {
 
     $user_id->update(['name'=>$request->name,
     'username'=> $request->username,'email'=>$request->email,'usertype'=>$request->usertype,'status'=>$request->status]);
- 
+
     return Response::json($user);
 });
- 
+
 
 Route::put('/faqs/{faq_id?}', function (Request $request,Faq $faq_id) {
     //  $faq = Faq::find($faq_id);
     // $faq->header = $request->header;
-    // $faq->body = $request->body;  
+    // $faq->body = $request->body;
     // $faq->save();
 
  $faq_id->update(['header'=>$request->header,
     'body'=> $request->body]);
     return Response::json($faq);
 });
- 
+
 
 //--DELETE a link--//
 Route::delete('/users/{user_id?}', function (User $user_id) {
@@ -141,6 +142,10 @@ Route::get('index/{username}',['as'=>'profile.single','uses'=>'ProfilesControlle
 Route::get('/settings/{username}',['as'=>'profile.single','uses'=>'ProfilesController@settings'])->where('username','[\w\d\-\_]+')->middleware('verified');
 Route::get('/cvdownload/{file}',['as'=>'download.single','uses'=>'ProfilesController@download']);
 Route::get('/usersettings/{username}',['as'=>'users.update','uses'=>'UserSettings@show'])->where('username','[\w\d\-\_]+')->middleware('verified');
+Route::get('/getfollower/{username}',['as'=>'profile.single','uses'=>'ListsOutController@getfollower'])->where('username','[\w\d\-\_]+');
+Route::get('/getfollowing/{username}',['as'=>'profile.single','uses'=>'ListsOutController@getfollowing'])->where('username','[\w\d\-\_]+');
+
+
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update')->middleware('verified');
 Route::patch('/users/{user}', 'UserSettings@update')->name('users.update');
 Route::post('/storepost','PostsController@store');

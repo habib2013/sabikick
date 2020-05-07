@@ -48,21 +48,27 @@ public function clubs(){
 
     return view ('lists.clubs',compact('players'));
 }
-public function getfollowing(){
-   $user = auth()->user()->following()->pluck('profiles.user_id');
+public function getfollowing($username){
+    $myuser = User::where('username','=',$username)->firstorFail();
+
+    $user = $myuser->following()->pluck('profiles.user_id');
+    // dd($user);
+    $followuser = User::whereIn('id',$user)->get();
+    // dd($followuser);
+    return view('connections.following',compact('followuser'));
+    //    $user = auth()->user()->following()->pluck('profiles.user_id');
+
    // $user = auth()->user()->profile()->follower()->pluck('.user_id');
-
-        $followuser = User::whereIn('id',$user)->get();
-        // dd($followuser);
-return view('connections.following',compact('followuser'));
-
 }
 
-public function getfollower(){
-   
-   $user = auth()->user()->profile->followers()->pluck('users.id');
-   $followuser = User::whereIn('id',$user)->get();
+public function getfollower($username){
+    $myuser = User::where('username','=',$username)->firstorFail();
+    $user = $myuser->profile->followers()->pluck('users.id');
+    $followuser = User::whereIn('id',$user)->get();
+
+    return view('connections.followers',compact('followuser'));
+    //    $user = auth()->user()->profile->followers()->pluck('users.id');
+// dd($user);
 //    dd($followuser);
-   return view('connections.followers',compact('followuser'));
 }
 }
