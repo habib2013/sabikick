@@ -42,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
         static::created(function($user){
             $user->profile()->create([
                 'title'=>$user->username,
-               
+
             ]);
 
         });
@@ -57,6 +57,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function following(){
         return $this->belongsToMany(Profile::class);
     }
+
+
     public function videourl(){
         return $this->hasMany(VideoUrl::class);
     }
