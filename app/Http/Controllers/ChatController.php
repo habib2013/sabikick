@@ -9,15 +9,14 @@ use Illuminate\Support\Facades\DB;
 use URL;
 use Illuminate\Support\Str;
 
-
 class ChatController extends Controller
 {
-   
+
     public function __construct()
     {
         $this->middleware('auth');
     }
-  
+
   public function chathome($id){
   return view('chat.chathome');
   }
@@ -46,7 +45,7 @@ function callmessage($id){
     foreach($chats as $chat){
         if($chat->sender != $auth_id){
 echo ' <div class="incoming_msg">
-<div class="incoming_msg_img"> 
+<div class="incoming_msg_img">
 <span style="height:30px;width:30px" class="avatar bg-primary text-white rounded-circle avatar-lg">'. mb_substr($user->name , 0, 2) .'
 </span>
 </div>
@@ -78,7 +77,7 @@ public function seenMessage(){
     $chats = chat::where('recever',$auth_id)
     ->where('is_seen',1)
     ->get()
-    ->count();     
+    ->count();
     print_r($chats );
 }
 public function seenUpdate(){
@@ -86,7 +85,7 @@ public function seenUpdate(){
     $chats = chat::where('recever',$auth_id)
     ->where('is_seen',1)
     ->update(['is_seen' => 0]);
-    
+
 }
 public function singleSeenUpdate($id){
     $auth_id=Auth::id();
@@ -122,14 +121,14 @@ public function typing(Request $request){
         $typing = new typing;
         $typing->recever = $id;
         $typing->sender = Auth::id();
-       
+
         $typing->save();
     }
 }
 public function deletemessage($id){
     DB::table('chats')->where('id',$id)
                       ->delete();
-  
+
 }
 public function typinc_receve($id){
     $typing_receve= DB::table('typings')->where('recever',Auth::id())
@@ -137,16 +136,16 @@ public function typinc_receve($id){
                         ->first();
        if(isset( $typing_receve)){
            return  $typing_receve->check_status;
-       }            
+       }
 
 }
 public function allMessageView(){
     $url=URL::to('/message/');
     $users = DB::table('users')->get();
-   
+
     foreach($users as $user){
         if(Auth::id()!=$user->id){
-            
+
             $message = DB::table('chats')->where('recever',Auth::id())
                                          ->where('sender',$user->id)
                                          ->orderBy('id','desc')
@@ -156,7 +155,7 @@ public function allMessageView(){
                                           ->where('is_user_seen',1)
                                           ->get()
                                           ->count();
-                                         
+
             if($msgcount>0){
                 $msg="(". $msgcount  .")";
                 $start_b='<b>';
@@ -178,7 +177,7 @@ public function allMessageView(){
                 <div class="avatar-content ml-3">
                   <h6 class="mb-0">' . $user->name . $msg .'</h6>
                   <small class="d-block text-muted font-weight-bold">'.$user->email.'</small>
-              
+
                   </div>
               </div>
             </div>
@@ -188,14 +187,14 @@ public function allMessageView(){
                </p>
             </div>
           </div>
-        
-      
+
+
         </div>
-       
+
     </a>
             ';
           }
-      
+
         }
     }
 

@@ -430,7 +430,6 @@
                 @if(Auth::user()->id == $user->id)
 
 @else
-
                 <a href="{{URL::to('/message/'.$user->id)}}">
                 <div class="pt-5 mt-5 delimiter-top">
                <button class="btn btn-success"><span class="far-fa-comment"></span> Start a chat with {{$user->username}}</button>
@@ -1046,13 +1045,11 @@ No video post here
 
 function seenMessage() {
 
-
     $.ajax({
         type:'get',
         url:'{{URL::to('/seen')}}',
         datatype:'html',
         success:function(response){
-
             if(response > 0){
                 $('#smsnum').show();
                 $('#smsnum').html(response);
