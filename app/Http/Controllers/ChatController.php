@@ -78,7 +78,7 @@ public function seenMessage(){
     ->where('is_seen'   ,1)
     ->get()
     ->count();
-    print_r($chats );
+    dd($chats );
 }
 public function seenUpdate(){
     $auth_id=Auth::id();
