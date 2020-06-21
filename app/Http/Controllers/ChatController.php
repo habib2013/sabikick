@@ -75,7 +75,7 @@ public function soundCheck(){
 public function seenMessage(){
     $auth_id=Auth::id();
     $chats = chat::where('recever',$auth_id)
-    ->where('is_seen',1)
+    ->where('is_seen'   ,1)
     ->get()
     ->count();
     print_r($chats );
